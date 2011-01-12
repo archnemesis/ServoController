@@ -185,7 +185,6 @@ void MainWindow::on_sliderChannel1_sliderMoved(int position)
     setChannelPosition('A', position);
 }
 
-
 void MainWindow::on_sliderChannel1_valueChanged(int value)
 {
     on_sliderChannel1_sliderMoved(value);
