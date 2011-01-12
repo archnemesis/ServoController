@@ -1,0 +1,29 @@
+Servo Controller
+================
+
+ServoController is a simple test application for servo control using
+Atmel AVR microcontrollers and a custom serial protocol. For details
+on the serial protocol, see the below section.
+
+Building the Application
+------------------------
+
+You'll need the following dependencies:
+
+* Qt >= 4.0
+* Serial port or USB-to-serial adapter
+* ServoController hardware device
+
+### Compile
+
+	user@host:~/ServoController# make
+	user@host:~/ServoController# make install
+
+### Run
+
+	user@host:~# ServoController
+
+Serial Protocol
+---------------
+
+To be written...
