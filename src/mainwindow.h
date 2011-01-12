@@ -29,8 +29,12 @@ private:
     Ui::MainWindow *ui;
     QExtSerialPort *serial_ctrl;
     QTimer *timer_checkReadyState;
+    void setChannelPosition(char channel, int position);
 
 private slots:
+    void on_dialChannel2_sliderMoved(int position);
+    void on_dialChannel1_sliderMoved(int position);
+    void on_btnBrowse_clicked();
     void on_sliderChannel2_valueChanged(int value);
     void on_sliderChannel2_sliderMoved(int position);
     void on_sliderChannel1_valueChanged(int value);
