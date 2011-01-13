@@ -169,6 +169,11 @@ void MainWindow::checkReadyState()
             return;
         }
         else {
+            ui->grpChannel1->setEnabled(true);
+            ui->grpChannel2->setEnabled(true);
+            ui->btnDisconnect->setEnabled(true);
+            ui->btnConnect->setEnabled(false);
+            statusBar()->showMessage("Connected to controller");
             return;
         }
     }
@@ -178,7 +183,7 @@ void MainWindow::checkReadyState()
 
 void MainWindow::on_sliderChannel1_sliderMoved(int position)
 {
-    qDebug("Channel 1 slider moved to %d", position);
+    //qDebug("Channel 1 slider moved to %d", position);
 
     ui->dialChannel1->setValue(position);
     ui->lneChannel1Value->setText(QString("%1").arg(position));
@@ -192,7 +197,7 @@ void MainWindow::on_sliderChannel1_valueChanged(int value)
 
 void MainWindow::on_sliderChannel2_sliderMoved(int position)
 {
-    qDebug("Channel 2 slider moved to %d", position);
+    //qDebug("Channel 2 slider moved to %d", position);
 
     ui->dialChannel2->setValue(position);
     ui->lneChannel2Value->setText(QString("%1").arg(position));
@@ -236,4 +241,17 @@ void MainWindow::on_dialChannel1_sliderMoved(int position)
 void MainWindow::on_dialChannel2_sliderMoved(int position)
 {
     ui->sliderChannel2->setValue(position);
+}
+
+void MainWindow::on_btnDisconnect_clicked()
+{
+    if (serial_ctrl->isOpen()) {
+        serial_ctrl->close();
+        ui->grpChannel1->setEnabled(false);
+        ui->grpChannel2->setEnabled(false);
+        ui->sliderChannel1->setValue(1000);
+        ui->sliderChannel2->setValue(1000);
+        ui->btnDisconnect->setEnabled(false);
+        ui->btnConnect->setEnabled(true);
+    }
 }

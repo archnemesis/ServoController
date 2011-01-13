@@ -32,6 +32,7 @@ private:
     void setChannelPosition(char channel, int position);
 
 private slots:
+    void on_btnDisconnect_clicked();
     void on_dialChannel2_sliderMoved(int position);
     void on_dialChannel1_sliderMoved(int position);
     void on_btnBrowse_clicked();

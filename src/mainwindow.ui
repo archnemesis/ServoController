@@ -125,7 +125,7 @@
           </widget>
          </item>
          <item row="4" column="2">
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="btnDisconnect">
            <property name="text">
             <string>Disconnect</string>
            </property>
@@ -217,7 +217,10 @@
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="groupBox">
+     <widget class="QGroupBox" name="grpChannel1">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="title">
        <string>Channel 1</string>
       </property>
@@ -314,7 +317,10 @@
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="groupBox_2">
+     <widget class="QGroupBox" name="grpChannel2">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="title">
        <string>Channel 2</string>
       </property>
